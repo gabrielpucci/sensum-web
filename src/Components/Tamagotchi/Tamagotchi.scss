@@ -1,0 +1,15 @@
+@import "../../Styles/Mixins/destyling.scss";
+@import "../../Styles/colors.scss";
+
+.Tamagotchi {
+  @include destyledButton;
+  height: 150px;
+  width: 150px;
+  font-size: 45px;
+  color: $light;
+  border-radius: 16px;
+  box-shadow: 4px 4px 8px rgba($color: black, $alpha: 0.8);
+  &:active {
+    background-color: black;
+  }
+}

@@ -1,0 +1,10 @@
+@import "./Styles/Mixins/fonts.scss";
+@import "./Styles/colors.scss";
+
+.App {
+  background-color: $dark;
+  height: 100%;
+  * {
+    @include light;
+  }
+}

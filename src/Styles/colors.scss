@@ -1,0 +1,14 @@
+$dark: #271f34;
+$principal: #4b3968;
+$secondary: #9773d1;
+$info: #cbaaff;
+$light: #f9f6ff;
+
+// Export to use in JS if needed
+:export {
+  dark: $dark;
+  principal: $principal;
+  secondary: $secondary;
+  info: $info;
+  light: $light;
+}
