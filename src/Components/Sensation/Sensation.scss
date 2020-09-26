@@ -1,0 +1,31 @@
+@import "../../Styles/colors.scss";
+@import "../../Styles/Mixins/fonts.scss";
+
+.Sensation {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: $light;
+  > .SensationBody {
+    > .SensationBodyText {
+      @include large;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      height: 50vh;
+      width: 100%;
+      margin-top: 10vh;
+      border-top: 1px solid $light;
+      border-bottom: 1px solid $light;
+      padding: 3rem;
+      text-align: center;
+      overflow: auto;
+    }
+    > .Signature {
+      @include small;
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 2rem;
+    }
+  }
+}
