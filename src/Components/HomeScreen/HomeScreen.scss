@@ -1,36 +1,8 @@
-@import "../../Styles/Mixins/destyling.scss";
-@import "../../Styles/Mixins/fonts.scss";
-@import "../../Styles/colors.scss";
-
 .HomeScreen {
   display: flex;
   flex-direction: column;
   height: 100%;
-  > nav {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr 1fr;
-    grid-template-areas: ". . . AppName . . Pulse";
 
-    > .AppName {
-      grid-area: AppName;
-      background-color: transparent;
-      color: $light;
-      @include destyledButton;
-      @include large;
-    }
-    > .Pulse {
-      @include destyledButton;
-      grid-area: Pulse;
-      fill: $info;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      > .PulseIcon {
-        width: 23px;
-        height: 23px;
-      }
-    }
-  }
   > main {
     display: flex;
     flex-direction: column;

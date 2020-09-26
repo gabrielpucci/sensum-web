@@ -1,0 +1,37 @@
+@import "../../Styles/Mixins/destyling.scss";
+@import "../../Styles/Mixins/fonts.scss";
+@import "../../Styles/colors.scss";
+
+.AppHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr 1fr;
+  grid-template-areas: ". . . AppName . . Pulse";
+
+  > .AppName {
+    grid-area: AppName;
+    background-color: transparent;
+    color: $light;
+    @include destyledButton;
+    @include large;
+  }
+  > .Pulse,
+  > .Close {
+    @include destyledButton;
+    grid-area: Pulse;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    > .PulseIcon,
+    > .CloseIcon {
+      fill: $info;
+    }
+    > .PulseIcon {
+      width: 23px;
+      height: 23px;
+    }
+    > .CloseIcon {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
