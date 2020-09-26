@@ -1,5 +1,6 @@
 @import "../../Styles/colors.scss";
 @import "../../Styles/Mixins/fonts.scss";
+@import "../../Styles/Mixins/destyling.scss";
 
 .Sensation {
   display: flex;
@@ -15,8 +16,8 @@
       height: 50vh;
       width: 100%;
       margin-top: 10vh;
-      border-top: 1px solid $light;
-      border-bottom: 1px solid $light;
+      border-top: 1px solid $secondary;
+      border-bottom: 1px solid $secondary;
       padding: 3rem;
       text-align: center;
       overflow: auto;
@@ -25,7 +26,49 @@
       @include small;
       display: flex;
       justify-content: flex-end;
+      align-items: center;
       padding-right: 2rem;
+      height: 6vh;
+      font-style: normal;
+    }
+  }
+  > .Navigator {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .VoteBtn,
+    .NavBtn {
+      @include destyledButton;
+      @include large;
+      @include bold;
+      color: $light;
+      padding: 0;
+    }
+    > .Votes {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-left: 1rem;
+      > .VoteBtn {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-right: 1rem;
+        > svg {
+          height: 15px;
+          width: 15px;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+    > .NavArrows {
+      > .NavBtn {
+        height: 36px;
+        width: 36px;
+        fill: $light;
+      }
     }
   }
 }

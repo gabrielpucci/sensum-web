@@ -16,7 +16,7 @@ In practice, this means there will be at least two steps to this project, with a
 
 Step one encompasses reading and showing:
 
-1. Creating presentational components
+1. **[CURRENT]** Creating presentational components
 2. Creating app state
 3. Getting sensations from API, storing them
 4. Showing sensations to user
