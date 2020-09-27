@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.scss";
-import Sensation from "./Components/Sensation/Sensation";
+import Sensations from "./Components/Sensations/Sensations";
 
 function App() {
   return (
     <div className="App">
-      <Sensation />
+      <Sensations />
     </div>
   );
 }

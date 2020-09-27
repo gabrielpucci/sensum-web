@@ -2,7 +2,7 @@
 @import "../../Styles/Mixins/fonts.scss";
 @import "../../Styles/Mixins/destyling.scss";
 
-.Sensation {
+.SensationView {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -67,7 +67,13 @@
       > .NavBtn {
         height: 36px;
         width: 36px;
-        fill: $light;
+        color: $light;
+        &.RightArrow {
+          margin-left: 1rem;
+        }
+        &:disabled {
+          color: $principal;
+        }
       }
     }
   }
