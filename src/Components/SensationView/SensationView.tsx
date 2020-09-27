@@ -27,10 +27,10 @@ const SensationView: React.FC<SensationViewProps> = ({
   isLast,
 }: SensationViewProps) => {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLElement>) => {
-    if (e.key === "ArrowLeft" && !isFirst) {
+    if (e.key === "ArrowLeft") {
       goBack();
     }
-    if (e.key === "ArrowRight" && !isLast) {
+    if (e.key === "ArrowRight") {
       goForth();
     }
   };
