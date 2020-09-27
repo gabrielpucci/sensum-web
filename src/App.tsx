@@ -7,9 +7,9 @@ import HomeScreen from "./Components/HomeScreen/HomeScreen";
 function App() {
   return (
     <Router className="App">
-      <HomeScreen path="/" />
+      <HomeScreen path="/" default />
       <Sensations
-        path="sensation"
+        path="sensation/:currPage"
         sensations={[
           {
             text: "Nalgueame pero _también_ dame besitos en la frente",
@@ -31,8 +31,16 @@ function App() {
             text: "Nalgueame pero _también_ dame besitos en la frente",
             signature: "Anonymous",
             votes: {
-              down: 0,
-              up: 0,
+              down: 10,
+              up: 1,
+            },
+          },
+          {
+            text: "Nalgueame pero _también_ dame besitos en la frente",
+            signature: "Anonymous",
+            votes: {
+              down: 6,
+              up: 1,
             },
           },
         ]}

@@ -1,8 +1,8 @@
 export interface Sensation {
-  text: string;
-  signature: string;
-  votes: {
-    up: number;
-    down: number;
+  readonly text: string;
+  readonly signature: string;
+  readonly votes: {
+    readonly up: number;
+    readonly down: number;
   };
 }

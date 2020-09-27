@@ -2,19 +2,13 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-
+  overflow: hidden;
   > main {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
-
-    > .Token {
-      > .PulseIcon {
-        width: 45px;
-        height: 45px;
-      }
-    }
+    padding: 3rem;
   }
 }

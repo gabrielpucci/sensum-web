@@ -5,7 +5,7 @@ import "./AppHeader.scss";
 import { Link } from "@reach/router";
 
 interface AppHeaderProps {
-  rightButton: "goToHome" | "goToSensations";
+  readonly rightButton: "goToHome" | "goToSensations";
 }
 
 const AppHeader: React.FC<AppHeaderProps> = ({
@@ -16,7 +16,7 @@ const AppHeader: React.FC<AppHeaderProps> = ({
       <button
         type="button"
         className="AppName"
-        onClick={() => alert("24 electrones en órbita")}
+        onClick={() => alert("24 electrones en órbita")} // TODO
       >
         sensum
       </button>
@@ -25,7 +25,7 @@ const AppHeader: React.FC<AppHeaderProps> = ({
           <Close className="CloseIcon" />
         </Link>
       ) : (
-        <Link to="sensation" className="Pulse">
+        <Link to="/sensation/0" className="Pulse">
           <PulseIcon className="PulseIcon" />
         </Link>
       )}

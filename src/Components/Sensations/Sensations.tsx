@@ -1,36 +1,51 @@
-import { RouteComponentProps } from "@reach/router";
-import React, { useState } from "react";
+import { RouteComponentProps, navigate } from "@reach/router";
+import React from "react";
 import { Sensation } from "../../Model/Sensation";
 import SensationView from "../SensationView/SensationView";
 
 interface SensationsProps extends RouteComponentProps {
-  sensations: Array<Sensation>;
+  readonly sensations: Array<Sensation>;
+  readonly currPage?: string;
 }
 
 const Sensations: React.FC<SensationsProps> = ({
   sensations,
+  currPage = "0",
 }: SensationsProps) => {
-  const [currPage, setCurrPage] = useState(0);
-  const isFirstPage = currPage === 0;
-  const isLastPage = currPage === sensations.length - 1;
+  const currSensation = sensations[parseInt(currPage)];
+  const isFirstPage = currPage === "0";
+  const isLastPage = parseInt(currPage) === sensations.length - 1;
+
+  const offsetCurrPage = (offset: number) =>
+    navigate(`/sensation/${parseInt(currPage) + offset}`);
+
   const goForth = () => {
     if (!isLastPage) {
-      setCurrPage(currPage + 1);
+      offsetCurrPage(1);
     }
   };
   const goBack = () => {
     if (!isFirstPage) {
-      setCurrPage(currPage - 1);
+      offsetCurrPage(-1);
     }
+  };
+
+  const voteUp = () => {
+    alert("Voting up " + currPage);
+  };
+  const voteDown = () => {
+    alert("Voting down " + currPage);
   };
 
   return (
     <SensationView
-      sensation={sensations[currPage]}
+      sensation={currSensation}
       goForth={goForth}
       goBack={goBack}
       isFirst={isFirstPage}
       isLast={isLastPage}
+      voteDown={voteDown}
+      voteUp={voteUp}
     />
   );
 };

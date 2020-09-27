@@ -1,0 +1,14 @@
+.SensumIcon {
+  width: fit-content;
+  > .Pajaro1,
+  > .Pajaro2 {
+    fill: #f9f6fb;
+    stroke: #f9f6fb;
+    stroke-miterlimit: 10;
+  }
+  > .Circulo {
+    fill: none;
+    stroke: #f9f6fb;
+    stroke-miterlimit: 10;
+  }
+}

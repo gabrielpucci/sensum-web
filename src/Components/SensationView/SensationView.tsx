@@ -12,11 +12,13 @@ import "./SensationView.scss";
 import { Sensation } from "../../Model/Sensation";
 
 interface SensationViewProps {
-  sensation: Sensation;
-  goForth: () => void;
-  goBack: () => void;
-  isFirst: boolean;
-  isLast: boolean;
+  readonly sensation: Sensation;
+  readonly goForth: () => void;
+  readonly goBack: () => void;
+  readonly isFirst: boolean;
+  readonly isLast: boolean;
+  readonly voteUp: () => void;
+  readonly voteDown: () => void;
 }
 
 const SensationView: React.FC<SensationViewProps> = ({
@@ -25,6 +27,8 @@ const SensationView: React.FC<SensationViewProps> = ({
   goBack,
   isFirst,
   isLast,
+  voteDown,
+  voteUp,
 }: SensationViewProps) => {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLElement>) => {
     if (e.key === "ArrowLeft") {
@@ -34,21 +38,24 @@ const SensationView: React.FC<SensationViewProps> = ({
       goForth();
     }
   };
+  const opacity: string = `${
+    ((sensation.votes.up + 1) / (sensation.votes.down + 1)) * 100
+  }%`;
   return (
     <article className="SensationView" onKeyDown={handleKeyDown} tabIndex={0}>
       <AppHeader rightButton="goToHome" />
       <section className="SensationBody">
-        <div className="SensationBodyText">
+        <div className="SensationBodyText" style={{ opacity }}>
           <ReactMarkdown source={sensation.text} />
         </div>
         <address className="Signature">~ {sensation.signature}</address>
       </section>
       <footer className="Navigator">
         <div className="Votes">
-          <button className="VoteBtn NegVotes">
+          <button className="VoteBtn NegVotes" onClick={voteDown}>
             <FontAwesomeIcon icon={faMinus} /> {sensation.votes.down}
           </button>
-          <button className="VoteBtn PosVotes">
+          <button className="VoteBtn PosVotes" onClick={voteUp}>
             <FontAwesomeIcon icon={faPlus} /> {sensation.votes.up}
           </button>
         </div>
