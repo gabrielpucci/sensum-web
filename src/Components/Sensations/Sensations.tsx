@@ -1,8 +1,9 @@
+import { RouteComponentProps } from "@reach/router";
 import React, { useState } from "react";
 import { Sensation } from "../../Model/Sensation";
 import SensationView from "../SensationView/SensationView";
 
-interface SensationsProps {
+interface SensationsProps extends RouteComponentProps {
   sensations: Array<Sensation>;
 }
 

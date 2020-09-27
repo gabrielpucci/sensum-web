@@ -1,11 +1,15 @@
 import React from "react";
-import "./App.scss";
 import Sensations from "./Components/Sensations/Sensations";
+import { Router } from "@reach/router";
+import "./App.scss";
+import HomeScreen from "./Components/HomeScreen/HomeScreen";
 
 function App() {
   return (
-    <div className="App">
+    <Router className="App">
+      <HomeScreen path="/" />
       <Sensations
+        path="sensation"
         sensations={[
           {
             text: "Nalgueame pero _también_ dame besitos en la frente",
@@ -33,7 +37,7 @@ function App() {
           },
         ]}
       />
-    </div>
+    </Router>
   );
 }
 

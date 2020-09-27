@@ -36,10 +36,7 @@ const SensationView: React.FC<SensationViewProps> = ({
   };
   return (
     <article className="SensationView" onKeyDown={handleKeyDown} tabIndex={0}>
-      <AppHeader
-        rightButton="goToHome"
-        onClickRightButton={() => alert("MainPage")} // TODO remove
-      />
+      <AppHeader rightButton="goToHome" />
       <section className="SensationBody">
         <div className="SensationBodyText">
           <ReactMarkdown source={sensation.text} />

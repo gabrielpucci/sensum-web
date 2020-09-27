@@ -2,15 +2,14 @@ import React from "react";
 import { ReactComponent as PulseIcon } from "../../Svg/pulse.svg";
 import { ReactComponent as Close } from "../../Svg/close.svg";
 import "./AppHeader.scss";
+import { Link } from "@reach/router";
 
 interface AppHeaderProps {
   rightButton: "goToHome" | "goToSensations";
-  onClickRightButton: () => void;
 }
 
 const AppHeader: React.FC<AppHeaderProps> = ({
   rightButton,
-  onClickRightButton,
 }: AppHeaderProps) => {
   return (
     <nav className="AppHeader">
@@ -22,13 +21,13 @@ const AppHeader: React.FC<AppHeaderProps> = ({
         sensum
       </button>
       {rightButton === "goToHome" ? (
-        <button type="button" className="Close" onClick={onClickRightButton}>
+        <Link to="/" className="Close">
           <Close className="CloseIcon" />
-        </button>
+        </Link>
       ) : (
-        <button type="button" className="Pulse" onClick={onClickRightButton}>
+        <Link to="sensation" className="Pulse">
           <PulseIcon className="PulseIcon" />
-        </button>
+        </Link>
       )}
     </nav>
   );

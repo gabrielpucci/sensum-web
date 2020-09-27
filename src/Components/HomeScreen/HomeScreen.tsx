@@ -1,16 +1,14 @@
 import React from "react";
-import "./HomeScreen.scss";
 import { ReactComponent as PulseIcon } from "../../Svg/pulse.svg";
 import Tamagotchi from "./Tamagotchi/Tamagotchi";
 import AppHeader from "../AppHeader/AppHeader";
+import { RouteComponentProps } from "@reach/router";
+import "./HomeScreen.scss";
 
-const HomeScreen: React.FC<{}> = () => {
+const HomeScreen: React.FC<RouteComponentProps> = () => {
   return (
     <div className="HomeScreen">
-      <AppHeader
-        rightButton="goToSensations"
-        onClickRightButton={() => alert("Sensations")}
-      />
+      <AppHeader rightButton="goToSensations" />
       <main>
         <Tamagotchi />
         <button
