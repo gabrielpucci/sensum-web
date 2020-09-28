@@ -37,7 +37,7 @@ const Sensations: React.FC<SensationsProps> = ({
     alert("Voting down " + currPage);
   };
 
-  return (
+  return currSensation ? (
     <SensationView
       sensation={currSensation}
       goForth={goForth}
@@ -47,7 +47,7 @@ const Sensations: React.FC<SensationsProps> = ({
       voteDown={voteDown}
       voteUp={voteUp}
     />
-  );
+  ) : null;
 };
 
 export default Sensations;
