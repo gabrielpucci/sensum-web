@@ -14,14 +14,14 @@ The goal of this project is to make a simple sensations creator, reader and vote
 
 In practice, this means there will be at least two steps to this project, with an optional third one.
 
-Step one encompasses reading and showing:
+Step one **[DONE]** encompasses reading and showing:
 
-1. **[CURRENT]** Creating presentational components
-2. Creating app state
-3. Getting sensations from API, storing them
-4. Showing sensations to user
+1. ~~Creating presentational components~~
+2. ~~Creating app state~~
+3. ~~Getting sensations from API, storing them~~
+4. ~~Showing sensations to user~~
 
-Step two encompasses creating and voting:
+Step two **[CURR]** encompasses creating and voting:
 
 1. Getting and storing new tokens, showing them on screen
 2. Creating sensation creation form
@@ -32,9 +32,15 @@ Step three may include:
 
 1. Polishing up the UI.
 
-   - We could use something like [swipeable components](https://www.npmjs.com/package/react-swipeable) to navigate sensations. We should look out for
+   - We could use something like [swipeable components](https://www.npmjs.com/package/react-swipeable) to navigate sensations.
    - (TODO)
 
 2. Adding the entire functionality of the sensum-mobile's Tamagotchi
+
+## A few suggestions
+
+- If the browser offers a native tool to deal with it, use that tool.
+- Try to make stuff as accessible and fun as possible
+- Don't mind old browsers. We shouldn't be held back by Windows.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

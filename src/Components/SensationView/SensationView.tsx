@@ -31,11 +31,25 @@ const SensationView: React.FC<SensationViewProps> = ({
   voteUp,
 }: SensationViewProps) => {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLElement>) => {
-    if (e.key === "ArrowLeft") {
-      goBack();
-    }
-    if (e.key === "ArrowRight") {
-      goForth();
+    switch (e.key) {
+      case "ArrowLeft":
+        goBack();
+        break;
+
+      case "ArrowRight":
+        goForth();
+        break;
+
+      case "ArrowUp":
+        voteUp();
+        break;
+
+      case "ArrowDown":
+        voteDown();
+        break;
+
+      default:
+        break;
     }
   };
   const opacity: string = `${

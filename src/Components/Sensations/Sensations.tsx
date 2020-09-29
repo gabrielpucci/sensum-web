@@ -1,17 +1,20 @@
 import { RouteComponentProps, navigate } from "@reach/router";
 import React from "react";
+import { useSelector } from "react-redux";
 import { Sensation } from "../../Model/Sensation";
+import { RootState } from "../../State/util";
 import SensationView from "../SensationView/SensationView";
 
 interface SensationsProps extends RouteComponentProps {
-  readonly sensations: Array<Sensation>;
   readonly currPage?: string;
 }
 
 const Sensations: React.FC<SensationsProps> = ({
-  sensations,
   currPage = "0",
 }: SensationsProps) => {
+  const sensations: Array<Sensation> = useSelector(
+    (state: RootState): Array<Sensation> => state || []
+  );
   const currSensation = sensations[parseInt(currPage)];
   const isFirstPage = currPage === "0";
   const isLastPage = parseInt(currPage) === sensations.length - 1;
