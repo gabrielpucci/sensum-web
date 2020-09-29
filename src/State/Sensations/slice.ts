@@ -1,13 +1,20 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Sensation } from "../../Model/Sensation";
 
-const initialState: Array<Sensation> = [];
+interface InitialState {
+  sensations: Array<Sensation>;
+}
+
+const initialState: InitialState = {
+  sensations: [],
+};
 
 export const sensationsSlice = createSlice({
   name: "sensations",
   initialState,
   reducers: {
-    receiveSensations: (_state, action: PayloadAction<Array<Sensation>>) =>
-      action.payload,
+    receiveSensations: (state, action: PayloadAction<Array<Sensation>>) => {
+      state.sensations = action.payload;
+    },
   },
 });

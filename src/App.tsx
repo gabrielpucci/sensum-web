@@ -11,12 +11,13 @@ const App: React.FC<{}> = () => {
   useEffect(() => {
     dispatch(pray());
     dispatch(loadAllSensations());
-  }, []);
+  }, [dispatch]);
 
   return (
     <Router className="App">
       <HomeScreen path="/" default />
-      <Sensations path="sensation/:currPage" />
+      <Sensations path="sensation" />
+      <Sensations path="sensation/:currSensationId" />
     </Router>
   );
 };

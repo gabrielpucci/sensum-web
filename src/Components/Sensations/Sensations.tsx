@@ -4,23 +4,33 @@ import { useSelector } from "react-redux";
 import { Sensation } from "../../Model/Sensation";
 import { RootState } from "../../State/util";
 import SensationView from "../SensationView/SensationView";
+import { SensumIcon } from "../SensumIcon/SensumIcon";
+import "./Sensations.scss";
 
 interface SensationsProps extends RouteComponentProps {
-  readonly currPage?: string;
+  readonly currSensationId?: string;
 }
 
 const Sensations: React.FC<SensationsProps> = ({
-  currPage = "0",
+  currSensationId = "",
 }: SensationsProps) => {
   const sensations: Array<Sensation> = useSelector(
-    (state: RootState): Array<Sensation> => state || []
+    (state: RootState): Array<Sensation> => state.sensations || []
   );
-  const currSensation = sensations[parseInt(currPage)];
-  const isFirstPage = currPage === "0";
-  const isLastPage = parseInt(currPage) === sensations.length - 1;
+
+  if (currSensationId === "" && sensations.length > 0) {
+    navigate(`/sensation/${sensations[0].id}`);
+  }
+
+  const currSensationIndex = sensations.findIndex(
+    (s) => s.id === currSensationId
+  );
+  const currSensation = sensations[currSensationIndex];
+  const isFirstPage = currSensationIndex === 0;
+  const isLastPage = currSensationIndex === sensations.length - 1;
 
   const offsetCurrPage = (offset: number) =>
-    navigate(`/sensation/${parseInt(currPage) + offset}`);
+    navigate(`/sensation/${sensations[currSensationIndex + offset].id}`);
 
   const goForth = () => {
     if (!isLastPage) {
@@ -34,23 +44,29 @@ const Sensations: React.FC<SensationsProps> = ({
   };
 
   const voteUp = () => {
-    alert("Voting up " + currPage);
+    alert("Voting up " + currSensationId);
   };
   const voteDown = () => {
-    alert("Voting down " + currPage);
+    alert("Voting down " + currSensationId);
   };
 
-  return currSensation ? (
-    <SensationView
-      sensation={currSensation}
-      goForth={goForth}
-      goBack={goBack}
-      isFirst={isFirstPage}
-      isLast={isLastPage}
-      voteDown={voteDown}
-      voteUp={voteUp}
-    />
-  ) : null;
+  return (
+    <article className="Sensations">
+      {currSensation ? (
+        <SensationView
+          sensation={currSensation}
+          goForth={goForth}
+          goBack={goBack}
+          isFirst={isFirstPage}
+          isLast={isLastPage}
+          voteDown={voteDown}
+          voteUp={voteUp}
+        />
+      ) : (
+        <SensumIcon />
+      )}
+    </article>
+  );
 };
 
 export default Sensations;

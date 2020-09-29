@@ -1,0 +1,26 @@
+@keyframes sensumLoading {
+  0% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.Sensations {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  > .SensationView {
+    width: 100%;
+  }
+  > .SensumIcon {
+    animation-name: sensumLoading;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+}
