@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/sensum-web/precache-manifest.d0dfa96daa02403b3582f5974f72518b.js"
+  "/sensum-web/precache-manifest.1479712b6ad2b24953a6c5eb2a935bb9.js"
 );
 
 self.addEventListener('message', (event) => {
