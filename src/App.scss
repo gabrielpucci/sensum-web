@@ -2,9 +2,16 @@
 @import "./Styles/colors.scss";
 
 .App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: $dark;
   height: 100%;
+  width: 100%;
   * {
     @include light;
+  }
+  > * {
+    width: 100%;
   }
 }

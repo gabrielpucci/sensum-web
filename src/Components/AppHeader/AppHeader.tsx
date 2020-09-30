@@ -21,11 +21,11 @@ const AppHeader: React.FC<AppHeaderProps> = ({
         sensum
       </button>
       {rightButton === "goToHome" ? (
-        <Link to="/" className="Close">
+        <Link to="/" className="Close" title="Cerrar sensaciones">
           <Close className="CloseIcon" />
         </Link>
       ) : (
-        <Link to="/sensation/0" className="Pulse">
+        <Link to="/sensation/" className="Pulse" title="Sensaciones">
           <PulseIcon className="PulseIcon" />
         </Link>
       )}

@@ -1,4 +1,4 @@
-### Sensum web: Like Sensum, but lighter and running almost everywhere
+### Sensum web: a lightweight Sensum for any OS
 
 ## Roadmap
 
@@ -37,7 +37,9 @@ Step three may include:
 
 2. Adding the entire functionality of the sensum-mobile's Tamagotchi
 
-## A few suggestions
+## Contributing
+
+PRs are welcome. Here're a few suggestions:
 
 - If the browser offers a native tool to deal with it, use that tool.
 - Try to make stuff as accessible and fun as possible
